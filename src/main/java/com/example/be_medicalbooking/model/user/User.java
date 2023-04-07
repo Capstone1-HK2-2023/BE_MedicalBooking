@@ -1,11 +1,9 @@
 package com.example.be_medicalbooking.model.user;
 
 import com.example.be_medicalbooking.model.appointment.Appointment;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -29,6 +27,7 @@ public class User {
     private String name;
     private String username;
     private String email;
+    @JsonIgnore
     private String password;
     private boolean gender;
     private Date birthday;
@@ -36,6 +35,9 @@ public class User {
     private String phone;
     private String address;
     private String urlImage;
+    @Enumerated(EnumType.STRING)
+    private AuthProvider provider;
+    private String providerId;
     private int status;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(  name = "user_roles",

@@ -19,11 +19,13 @@ repositories {
 }
 
 dependencies {
-// 	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
-	implementation 'com.nexmo:jwt:1.0.1'
-	implementation 'io.jsonwebtoken:jjwt-api:0.11.2' // JWT API
-	implementation 'io.jsonwebtoken:jjwt-impl:0.11.2' // JWT implementation
-	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.2' // JWT Jackson support
+
+// https://mvnrepository.com/artifact/org.objectfabric/objectfabric-cachebuilder
+	implementation 'org.objectfabric:objectfabric-cachebuilder:0.9.1'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+    implementation 'org.expath.http.client:http-client:1.4.1'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
 
 	implementation 'com.mysql:mysql-connector-j:8.0.32'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
